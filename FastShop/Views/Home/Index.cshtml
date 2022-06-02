@@ -1,0 +1,9 @@
+﻿@model HomeVM
+
+<h4>Акції</h4>
+<hr />
+@Html.Partial("_ItemsList", Model._SaleProduct)
+<hr class="text"/>
+<h4>Рекомендовані товари</h4>
+<hr />
+@Html.Partial("_ItemsList", Model._RecommendProduct)

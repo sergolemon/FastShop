@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Product>
+
+@if (Model == null)
+{
+	<h4>Ваш кошик порожній</h4>
+	return;
+}
+
+<h4>Кошик</h4>
+@foreach (var item in Model)
+{
+	<a href="/catalog/item/@item.Id">
+		<img width="15%" src="files/@item.Img.Split(',')[0]">
+		<span>@item.Name</span>
+	</a>
+	<br /><br />
+}
+<form action="/cart/clearcart" method="post">
+	<input value="очистити" type="submit" />
+</form>

@@ -1,0 +1,42 @@
+﻿@model CategoryVM
+
+@if (Model.p != null)
+{
+	@Html.Partial("_ItemsList", Model.p)
+}
+else if (Model.s != null)
+{
+	<div class="row">
+		@foreach (var item in Model.s)
+		{
+			<div class="col-3" style="text-align: center">
+				<img width="100%" src="/files/@item.Img" />
+				<a asp-route-par3="@item.EngName">@item.Name</a>
+			</div>
+		}
+	</div>
+}
+else if (Model.c != null)
+{
+	<div class="row">
+		@foreach (var item in Model.c)
+		{
+			<div class="col-3" style="text-align: center">
+				<img width="100%" src="/files/@item.Img" />
+				<a asp-route-par2="@item.EngName">@item.Name</a>
+			</div>
+		}
+	</div>
+}
+else if (Model.mc != null)
+{
+	<div class="row">
+		@foreach (var item in Model.mc)
+		{
+			<div class="col-3" style="text-align: center">
+				<img width="100%" src="/files/@item.Img" />
+				<a asp-route-par1="@item.EngName">@item.Name</a>
+			</div>
+		}
+	</div>
+}
